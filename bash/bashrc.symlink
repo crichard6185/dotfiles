@@ -15,17 +15,17 @@ export PATH="${HOME}/dotfiles/bin:${HOME}/bin:${PATH}"
 export PATH=/usr/local/bin:$PATH
 
 # Add android sdk tools to path if they exist
-ANDROID_SDK="/Applications/ADT/sdk/"
-[ -d "${ANDROID_SDK}/tools" ] && export PATH=${PATH}:${ANDROID_SDK}/tools
-[ -d "${ANDROID_SDK}/platform-tools" ] && export PATH=${PATH}:${ANDROID_SDK}/platform-tools
-unset ANDROID_SDK
+#ANDROID_SDK="/Applications/ADT/sdk/"
+#[ -d "${ANDROID_SDK}/tools" ] && export PATH=${PATH}:${ANDROID_SDK}/tools
+#[ -d "${ANDROID_SDK}/platform-tools" ] && export PATH=${PATH}:${ANDROID_SDK}/platform-tools
+#unset ANDROID_SDK
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/share/npm/bin # Add node package manager to PATH
 
 # IMPORTANT: Load RVM into a shell session *as a function*
 #            Otherwise things like switching gemsets won't work.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Anything inside here only gets executed in interactive shells
 if [[ -n "$PS1" ]]; then
@@ -62,21 +62,14 @@ if [[ -n "$PS1" ]]; then
         . /etc/bash_completion
     fi
 
-    # Alias script to launch development environment for IM Server.
-    if [ -f ~/im_workspace/common_utils/applescripts/launch_alias.bash ]; then
-        . ~/im_workspace/common_utils/applescripts/launch_alias.bash
-    fi
-
     # Set up keychain
     if which keychain 1>&2 >/dev/null; then
         keychain ~/.ssh/id_rsa ~/.ssh/id_dsa
         . ~/.keychain/$HOSTNAME-sh
     fi
 
-
     #bind arrow keys to history completion search!
     bind '"\e[A": history-search-backward'
     bind '"\e[B": history-search-forward'
 
 fi # [[ -n "$PS1" ]]
-

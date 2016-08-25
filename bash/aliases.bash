@@ -2,10 +2,6 @@
 export GREP_COLOR=33
 USE_COLOR_CMDS=""
 
-# for a mac
-export CLICOLOR=1
-export LSCOLORS=gxfxcxdxbxegedabagacad
-
 if [ ! -z "$USE_COLOR_CMDS" ]; then
   # Highlight search term in grep
   alias grep='grep --color=auto --line-number'
@@ -49,12 +45,6 @@ elif [ $(uname -s) = "Darwin" ]; then
   alias update_system="brew update && brew upgrade"
 fi
 
-# Simulate OSX's pbcopy and pbpaste on other platforms
-if [ ! $(uname -s) = "Darwin" ]; then
-  alias pbcopy='xsel --clipboard --input'
-  alias pbpaste='xsel --clipboard --output'
-fi
-
 alias stop_elastic_search="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 alias start_elastic_search="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 
@@ -73,7 +63,7 @@ alias nuke_dbs="bundle exec rake db:drop db:create db:migrate; RACK_ENV=test bun
 alias register_ipad="(cd ~/im_workspace/im_server/; rake registrations:finish_pending)"
 alias process_files="(cd ~/im_workspace/file_processor/; rake processor:handle_video_file; rake processor:handle_file; rake processor:fetch_pending_encryption_keys; rake processor:encrypt_key_per_user)"
 alias add_local="(cd ~/im_workspace/im_server; rake servers:add[local,https://`hostname`] services:reset)"
-
+alias ..="cd .."
 
 function read_x509() {
   openssl x509 -noout -text -in $1
