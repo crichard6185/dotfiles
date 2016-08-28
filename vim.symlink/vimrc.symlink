@@ -6,7 +6,6 @@ source $HOME/.vim/bundle.vim
 let mapleader = ','
 syntax enable
 
-colorscheme gummybears
 set t_Co=256
 " Set console highlights to be readable with black background
 set bg=dark
@@ -113,3 +112,4 @@ source $HOME/.vim/keymaps.vim
 source $HOME/.vim/commands.vim
 " File types
 source $HOME/.vim/filetypes.vim
+colorscheme jellybeans

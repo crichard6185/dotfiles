@@ -1,3 +1,4 @@
+
 # This is ususally the default, but enforce our assumption
 umask 022
 
@@ -62,14 +63,23 @@ if [[ -n "$PS1" ]]; then
         . /etc/bash_completion
     fi
 
-    # Set up keychain
-    if which keychain 1>&2 >/dev/null; then
-        keychain ~/.ssh/id_rsa ~/.ssh/id_dsa
-        . ~/.keychain/$HOSTNAME-sh
-    fi
-
     #bind arrow keys to history completion search!
     bind '"\e[A": history-search-backward'
     bind '"\e[B": history-search-forward'
 
 fi # [[ -n "$PS1" ]]
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+export NVM_DIR="/home/crichard/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export chromedriver=/usr/bin/chromedriver
+source ~/.bp_env
