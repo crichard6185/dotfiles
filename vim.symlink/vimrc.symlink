@@ -65,7 +65,7 @@ set backspace=indent,eol,start
 set selection=exclusive
 set selectmode=mouse,key
 set mousemodel=popup
-set keymodel=startsel,stopsel
+set keymodel=startsel
 
 set whichwrap+=<,>,[,]
 
@@ -112,4 +112,6 @@ source $HOME/.vim/keymaps.vim
 source $HOME/.vim/commands.vim
 " File types
 source $HOME/.vim/filetypes.vim
-colorscheme jellybeans
+
+colorscheme gummybears
+highlight LineNr ctermfg=gray ctermbg=007777

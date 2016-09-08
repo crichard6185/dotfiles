@@ -182,3 +182,4 @@ endfunction
 if filereadable(expand("~/.gvimrc.local"))
   source ~/.gvimrc.local
 endif
+set guifont=Monospace\ 12

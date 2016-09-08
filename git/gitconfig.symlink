@@ -64,3 +64,5 @@
 	name = Chad Richard
 	initials = cmr
 	email = chad.richard@gmail.com
+[diff]
+	tool = vimdiff
