@@ -83,3 +83,11 @@ export NVM_DIR="/home/crichard/.nvm"
 
 export chromedriver=/usr/bin/chromedriver
 source ~/.bp_env
+source ~/legacy-bashrc
+
+# Powerline
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  source /usr/share/powerline/bindings/bash/powerline.sh
+fi
+
+
