@@ -10,6 +10,8 @@ if [ ! -z "$USE_COLOR_CMDS" ]; then
 fi
 unset USE_COLOR_CMDS
 
+alias vim="vimx"
+
 export LS_CMD="ls"
 alias ls="$LS_CMD"
 alias ll="$LS_CMD -al"

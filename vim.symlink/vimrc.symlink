@@ -13,6 +13,8 @@ set bg=dark
 " Make GUI colors light on dark
 hi Normal guibg=black guifg=white
 
+set clipboard=unnamedplus " sets clipboard for use in linux
+
 set autoindent          " Copy indent from current line for new line
 set nosmartindent       " 'smartindent' breaks right-shifting of # lines
 
