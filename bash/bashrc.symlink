@@ -82,7 +82,6 @@ export NVM_DIR="/home/crichard/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export chromedriver=/usr/bin/chromedriver
-source ~/.bp_env
 source ~/legacy-bashrc
 
 # Powerline
