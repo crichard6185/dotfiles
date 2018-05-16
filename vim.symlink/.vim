@@ -1,0 +1,1 @@
+/home/crichard/dotfiles/vim.symlink
