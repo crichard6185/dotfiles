@@ -113,5 +113,5 @@ source $HOME/.vim/commands.vim
 " File types
 source $HOME/.vim/filetypes.vim
 
-colorscheme gummybears
+colorscheme jellybeans
 highlight LineNr ctermfg=gray ctermbg=007777
